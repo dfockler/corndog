@@ -1,0 +1,15 @@
+[package]
+name = "corndog"
+version = "0.1.0"
+authors = ["Daniel Fockler <dfockler13@gmail.com>"]
+
+[dependencies]
+hyper = "0.6"
+
+[lib]
+name = "corndog"
+path = "src/lib.rs"
+
+[[bin]]
+name = "corndog"
+path = "src/main.rs"
