@@ -18,11 +18,11 @@ fn pass(req: Request, res: Response<Fresh>) {
     let mut new_res = new_req.unwrap().start().unwrap().send().unwrap();
 
     // Parse out the body and filter it
-    let body = get_body(&mut new_res);
-    let real = filter_body(&body);
+    // let body = get_body(&mut new_res);
+    let body = filter_body(&get_body(&mut new_res));
 
     // Send the filtered response back to the client
-    res.send(real.as_bytes());
+    res.send(body.as_bytes());
 }
 
 fn filter_body(body: &String) -> String {
